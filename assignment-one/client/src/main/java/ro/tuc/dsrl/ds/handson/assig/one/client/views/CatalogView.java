@@ -1,30 +1,37 @@
 package ro.tuc.dsrl.ds.handson.assig.one.client.views;
 
-import ro.tuc.dsrl.ds.handson.assig.one.client.entities.Student;
-
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import ro.tuc.dsrl.ds.handson.assig.one.client.entities.Student;
+
 /**
- * @Author: Technical University of Cluj-Napoca, Romania
- *          Distributed Systems, http://dsrl.coned.utcluj.ro/
+ * @Author: Technical University of Cluj-Napoca, Romania Distributed Systems,
+ *          http://dsrl.coned.utcluj.ro/
  * @Module: assignment-one-client
  * @Since: Sep 1, 2015
- * @Description:
- *	CatalogView is a JFrame which contains the UI elements of the Client application.
+ * @Description: CatalogView is a JFrame which contains the UI elements of the
+ *               Client application.
  */
 public class CatalogView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
-	private JTextField textFirstname;
-	private JTextField textLastname;
-	private JTextField textMail;
-	private JTextField textId;
-	private JButton btnGet;
-	private JButton btnPost;
-	private JTextArea textArea;
+	private final JPanel contentPane;
+	private final JTextField textFirstname;
+	private final JTextField textLastname;
+	private final JTextField textMail;
+	private final JTextField textId;
+	private final JButton btnGet;
+	private final JButton btnPost;
+	private final JButton btnDelete;
+	private final JTextArea textArea;
 
 	public CatalogView() {
 		setTitle("HTTP Protocol simulator");
@@ -35,19 +42,19 @@ public class CatalogView extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblInsertNewStudent = new JLabel("Insert new student");
+		final JLabel lblInsertNewStudent = new JLabel("Insert new student");
 		lblInsertNewStudent.setBounds(10, 11, 120, 14);
 		contentPane.add(lblInsertNewStudent);
 
-		JLabel lblFirstname = new JLabel("First name");
+		final JLabel lblFirstname = new JLabel("First name");
 		lblFirstname.setBounds(10, 36, 60, 14);
 		contentPane.add(lblFirstname);
 
-		JLabel lblLastname = new JLabel("Last name");
+		final JLabel lblLastname = new JLabel("Last name");
 		lblLastname.setBounds(10, 61, 60, 14);
 		contentPane.add(lblLastname);
 
-		JLabel lblMail = new JLabel("Mail");
+		final JLabel lblMail = new JLabel("Mail");
 		lblMail.setBounds(10, 86, 46, 14);
 		contentPane.add(lblMail);
 
@@ -70,11 +77,11 @@ public class CatalogView extends JFrame {
 		btnPost.setBounds(10, 132, 89, 23);
 		contentPane.add(btnPost);
 
-		JLabel lblFindStudentBy = new JLabel("Find student by id ");
+		final JLabel lblFindStudentBy = new JLabel("Find student by id ");
 		lblFindStudentBy.setBounds(235, 11, 145, 14);
 		contentPane.add(lblFindStudentBy);
 
-		JLabel lblId = new JLabel("Id");
+		final JLabel lblId = new JLabel("Id");
 		lblId.setBounds(235, 36, 46, 14);
 		contentPane.add(lblId);
 
@@ -82,6 +89,10 @@ public class CatalogView extends JFrame {
 		textId.setBounds(320, 33, 86, 20);
 		contentPane.add(textId);
 		textId.setColumns(10);
+
+		btnDelete = new JButton("DELETE");
+		btnDelete.setBounds(340, 77, 89, 23);
+		contentPane.add(btnDelete);
 
 		btnGet = new JButton("GET");
 		btnGet.setBounds(235, 77, 89, 23);
@@ -98,6 +109,10 @@ public class CatalogView extends JFrame {
 
 	public void addBtnPostActionListener(ActionListener e) {
 		btnPost.addActionListener(e);
+	}
+
+	public void addBtnDeleteActionListener(ActionListener e) {
+		btnDelete.addActionListener(e);
 	}
 
 	public String getStudentId() {

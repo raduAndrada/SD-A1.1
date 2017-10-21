@@ -8,7 +8,7 @@ package ro.tuc.dsrl.ds.handson.assig.one.server.entities;
  * @Description:
  * 	Class describing the student
  */
-public class Student {
+public class Ct {
 
 	private int id;
 	private String firstname;
